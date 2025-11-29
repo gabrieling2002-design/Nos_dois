@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eu Te Amo, Minha Princesa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div class="menu-mobile" onclick="toggleMenu()">☰</div>
+<body>
+    <div class="hearts"></div>
+    <header class="topo">
+        <h1>Eu Te Amo, Minha Princesa</h1>
+        <p>Um pedacinho do que eu sinto por você ❤️</p>
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre Nós</a>
+        </nav>
+    </header>
+
+    <section class="galeria">
+        <div class="foto">
+            <img src="img/foto1.png" alt="Nós dois 1">
+        </div>
+        <div class="foto">
+            <img src="img/foto2.png" alt="Nós dois 2">
+        </div>
+        <div class="foto">
+            <img src="img/foto3.png" alt="Nós dois 3">
+        </div>
+    </section>
+
+    <section class="texto-romantico">
+        <h2>Para Minha Princesa</h2>
+        <p>
+            Cada instante contigo é especial. Você mudou minha vida, iluminou meus dias e trouxe amor
+            onde eu nem sabia que faltava.
+        </p>
+        <p>
+            Nada no mundo se compara ao que eu sinto por você. Eu te amo mais do que palavras conseguem explicar. ❤️
+        </p>
+    </section>
+    <script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤";
+        
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 10 + 10) + "px";
+        heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+
+        document.querySelector(".hearts").appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 7000);
+    }
+
+    setInterval(createHeart, 500);
+    
+    function toggleMenu() {
+        const menu = document.querySelector(".menu");
+        menu.classList.toggle("oculto");
+    }
+
+
+</script>
+
+</body>
+</html>

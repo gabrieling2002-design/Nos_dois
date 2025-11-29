@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nosso Amor</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<div class="menu-mobile" onclick="toggleMenu()">☰</div>
+<body>
+    <div class="hearts"></div>
+    <header>
+        <h1>Sobre Nosso Amor</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre Nós</a>
+        </nav>
+    </header>
+
+    <section class="sobre-container">
+        <div class="card-sobre">
+            <h2>Nosso Amor</h2>
+            <p>
+                Este espaço é dedicado à nossa história, ao carinho que construímos dia após
+                dia e a tudo que faz o nosso amor ser tão especial. Aqui celebramos cada
+                lembrança, cada conversa, cada sorriso e todos os momentos que tornaram nosso
+                caminho único.
+            </p>
+            <p>
+                O nosso amor é leve, verdadeiro e cheio de companheirismo. A cada dia que
+                passa, descobrimos mais um motivo para agradecer por estarmos juntos. Que este
+                site seja um pedacinho da nossa jornada e um lembrete do quanto somos
+                importantes um para o outro.
+            </p>
+            <p>
+                Eu te amo, hoje e sempre. 💖
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Feito com amor por nós dois ❤️</p>
+    </footer>
+    <script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤";
+        
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 10 + 10) + "px";
+        heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+
+        document.querySelector(".hearts").appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 7000);
+    }
+
+    setInterval(createHeart, 500);
+    
+    function toggleMenu() {
+        const menu = document.querySelector(".menu");
+        menu.classList.toggle("oculto");
+    }
+
+</script>
+
+</body>
+</html>
